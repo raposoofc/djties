@@ -1,0 +1,144 @@
+/* Reset */
+* {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: "Segoe UI", Arial, sans-serif;
+}
+
+/* Container principal - BODY AGORA É O FUNDO */
+body {
+      /* O background do BODY agora é a imagem com FULL VISIBILITY e FILTER */
+      background-image: url("../imgs/background.jpg");
+      background-repeat: no-repeat;
+      background-position: center center;
+      background-size: cover;
+      background-attachment: fixed;
+
+      /* Desfoque suave aplicado à imagem de fundo */
+      filter: blur(2px);
+
+      /* Garante que o body ocupe a tela inteira, mas não é o container de conteúdo */
+      min-height: 100vh;
+      margin: 0;
+
+      /* Ajuste para garantir que o body desfocado não saia da tela */
+      width: 100vw;
+}
+      /* Wrapper para o conteúdo reverter o desfoque e centralizar */
+      /* Este wrapper "body-content-wrapper" é o que centraliza o #container */
+.body-content-wrapper {
+      position: absolute;
+      inset: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      padding: 20px;
+      /* Reverte o desfoque para que o conteúdo #container fique nítido */
+      filter: blur(0);
+}
+
+/* CONTAINER PRINCIPAL */
+#container {
+      width: 360px;
+      min-height: 90vh;
+      /* Fundo escuro ou transparente para o tema DJ */
+      background: rgba(0, 0, 0, 0.6);
+      border-radius: 16px;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.6);
+      padding: 24px;
+      position: relative;
+      overflow: hidden;
+
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: flex-start;
+      text-align: center;
+}
+
+#container::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.1);
+      backdrop-filter: blur(5px);
+      border-radius: 16px;
+      z-index: 0;
+}
+
+#container > * {
+      position: relative;
+      z-index: 1;
+      width: 100%;
+}
+
+/* Perfil */
+#profile {
+      margin-bottom: 30px;
+}
+
+#profile img {
+      width: 100px;
+      height: 100px;
+      border-radius: 50%;
+      margin-bottom: 15px;
+      object-fit: cover;
+      /* efeito neon/brilho no globo */
+      box-shadow: 0 0 15px rgba(255, 255, 255, 0.8), 0 0 25px rgba(138, 43, 226, 0.6);     
+}
+
+#profile p {
+      font-size: 1rem;
+      color: #90EE90;
+}
+
+/* Menu */
+nav {
+      margin-bottom: 30px;
+      width: 100%;
+}
+
+nav .menu li {
+      list-style: none;
+      margin: 12px 0;
+}
+
+nav .menu a {
+      color: #FFFFFF;
+      text-decoration: none;
+      font-weight: 600;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      padding: 14px;
+      background: rgba(138, 43, 226, 0.3);
+      border-radius: 10px;
+      transition: all 0.3s ease;
+      width: 100%;
+      border: 1px solid #8A2BE2;
+      text-shadow: 0 0 3px #FFFFFF;
+}
+
+nav .menu a:hover {
+      background: #8A2BE2;
+      color: #000000;
+      border-color: #FFFFFF;
+      transform: scale(1.02);
+      box-shadow: 0 0 15px #8A2BE2;
+}
+
+nav .menu a i {
+      font-size: 1.3em;
+      filter: drop-shadow(0 0 3px #FFFFFF);
+}
+
+/* Footer */
+footer {
+      text-align: center;
+      margin-top: 20px;
+      font-size: 0.8rem;
+      color: #F2F4F6;
+}
