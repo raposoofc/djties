@@ -6,45 +6,57 @@
       font-family: "Segoe UI", Arial, sans-serif;
 }
 
-/* Container principal - BODY AGORA É O FUNDO */
+/* ----------------------------------------------------------------
+   CORREÇÃO 1: CENTRALIZAÇÃO e ISOLAMENTO do DESFOQUE
+   ---------------------------------------------------------------- */
+
 body {
-      /* O background do BODY agora é a imagem com FULL VISIBILITY e FILTER */
-      background-image: url("../imgs/background.jpg");
-      background-repeat: no-repeat;
-      background-position: center center;
-      background-size: cover;
-      background-attachment: fixed;
-
-      /* Desfoque suave aplicado à imagem de fundo */
-      filter: blur(2px);
-
-      /* Garante que o body ocupe a tela inteira, mas não é o container de conteúdo */
+      /* Removemos todas as propriedades de background e o filter: blur(2px); do body */
       min-height: 100vh;
-      margin: 0;
-
-      /* Ajuste para garantir que o body desfocado não saia da tela */
       width: 100vw;
-}
-      /* Wrapper para o conteúdo reverter o desfoque e centralizar */
-      /* Este wrapper "body-content-wrapper" é o que centraliza o #container */
-.body-content-wrapper {
-      position: absolute;
-      inset: 0;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      min-height: 100vh;
-      padding: 20px;
-      /* Reverte o desfoque para que o conteúdo #container fique nítido */
-      filter: blur(0);
+      margin: 0;
+      
+      /* Centralização Vertical e Horizontal: Aplicamos Flexbox no body */
+      display: flex; 
+      justify-content: center; 
+      align-items: center; 
+      
+      padding: 20px 0; /* Espaçamento vertical para telas menores */
+      overflow-x: hidden; /* Evita barra de rolagem horizontal por causa do desfoque */
 }
 
-/* CONTAINER PRINCIPAL */
+/* Novo: Pseudo-elemento para o Fundo Desfocado */
+body::before {
+    content: '';
+    /* Posicionamento para cobrir 100% da tela */
+    position: fixed; 
+    top: -5px; /* Compensa a borda que o desfoque pode criar */
+    left: -5px;
+    right: -5px;
+    bottom: -5px;
+    
+    z-index: -1; /* Coloca o fundo atrás de todo o conteúdo */
+    
+    /* Propriedades de Background movidas do body para cá */
+    background-image: url("../imgs/background.jpg");
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+    background-attachment: fixed;
+    
+    /* Aplicamos o desfoque APENAS na imagem de fundo */
+    filter: blur(2px); 
+}
+
+/* ----------------------------------------------------------------
+   CONTAINER PRINCIPAL (MANTENDO O VISUAL DJ)
+   ---------------------------------------------------------------- */
 #container {
       width: 360px;
-      min-height: 90vh;
+      /* min-height ajustado para permitir a centralização completa */
+      min-height: 70vh; 
       /* Fundo escuro ou transparente para o tema DJ */
-      background: rgba(0, 0, 0, 0.6);
+      background: rgba(0, 0, 0, 0.7); /* Fundo semi-transparente escuro */
       border-radius: 16px;
       box-shadow: 0 8px 20px rgba(0, 0, 0, 0.6);
       padding: 24px;
@@ -58,12 +70,13 @@ body {
       text-align: center;
 }
 
+/* Manter o overlay interno do container */
 #container::before {
       content: "";
       position: absolute;
       inset: 0;
       background: rgba(0, 0, 0, 0.1);
-      backdrop-filter: blur(5px);
+      /* O backdrop-filter foi removido por não ser mais necessário e simplificar */
       border-radius: 16px;
       z-index: 0;
 }
@@ -85,8 +98,14 @@ body {
       border-radius: 50%;
       margin-bottom: 15px;
       object-fit: cover;
-      /* efeito neon/brilho no globo */
-      box-shadow: 0 0 15px rgba(255, 255, 255, 0.8), 0 0 25px rgba(138, 43, 226, 0.6);     
+}
+
+#profile h1 { /* Aplicado ao h1 do HTML */
+      font-size: 1.8rem;
+      font-weight: bold;
+      color: #8A2BE2; /* Azul violeta néon */
+      margin-bottom: 6px;
+      text-shadow: 0 0 5px #8A2BE2, 0 0 10px #8A2BE2; /* Efeito Néon no texto */
 }
 
 #profile p {
@@ -141,4 +160,21 @@ footer {
       margin-top: 20px;
       font-size: 0.8rem;
       color: #F2F4F6;
+}
+
+/* Responsividade */
+@media (max-width: 420px) {
+      #container {
+            padding: 18px;
+            width: 100%;
+      }
+
+      #profile img {
+            width: 90px;
+            height: 90px;
+      }
+
+      #profile h1 {
+            font-size: 1.5rem;
+      }
 }
