@@ -100,12 +100,44 @@ body::before {
       object-fit: cover;
 }
 
-#profile h1 { /* Aplicado ao h1 do HTML */
-      font-size: 1.8rem;
-      font-weight: bold;
-      color: #8A2BE2; /* Azul violeta néon */
-      margin-bottom: 6px;
-      text-shadow: 0 0 5px #8A2BE2, 0 0 10px #8A2BE2; /* Efeito Néon no texto */
+#profile h1 {
+    /* Mantém o estilo base de cor e fonte existente */
+    color: #8A2BE2; /* Cor base: Violeta Néon */
+    font-size: 1.8rem;
+    font-weight: bold;
+    margin-bottom: 6px;
+    
+    /* Sombra base do neon - Sutilmente mais forte que o padrão */
+    text-shadow: 
+        0 0 7px rgba(138, 43, 226, 0.8), /* Brilho interno */
+        0 0 15px rgba(138, 43, 226, 0.5); /* Brilho externo */
+
+    /* Aplica a animação */
+    animation: neon-pulse 1.5s infinite alternate; 
+}
+
+/* * 2. Define a animação (keyframes) para o efeito pulsante.
+ * Alterna a intensidade da sombra para criar o brilho e o escurecimento.
+ */
+@keyframes neon-pulse {
+    0% {
+        /* Brilho máximo (Estado "aceso") */
+        text-shadow: 
+            0 0 5px #fff, 
+            0 0 10px #fff, 
+            0 0 20px #8A2BE2, 
+            0 0 40px #8A2BE2, 
+            0 0 60px #8A2BE2;
+        color: #FFFFFF; /* O centro do texto fica mais claro no pico */
+    }
+    
+    100% {
+        /* Brilho mínimo (Estado "apagado" ou sutil) */
+        text-shadow: 
+            0 0 7px rgba(138, 43, 226, 0.8), 
+            0 0 15px rgba(138, 43, 226, 0.5);
+        color: #8A2BE2; /* Retorna à cor base */
+    }
 }
 
 #profile p {
