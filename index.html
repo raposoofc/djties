@@ -11,6 +11,16 @@
       <link rel="icon" href=".assets/icon/dj.png" type="image/x-icon">
 </head>
 <body>
+      <!-- Áudio -->
+       <audio id="background-audio" loop autoplay muted>
+            <source src="./assets/audio/bachata.mp3" type="audio/mpeg">
+            Seu navegador não suporta o elemento de áudio.
+      </audio>
+
+      <div id="audio-control" onclick="toggleAudio()">
+            <i class="fas fa-volume-mute"></i>
+      </div>
+
       <main id="container">
             <!-- Perfil / Elemento visual -->
            <header id="profile">
@@ -29,9 +39,9 @@
                               </a>
                         </li>
                         <li>
-                              <a href="./menu.html" target="_blank" aria-label="Serviços Oferecidos">
-                                    <i class="fa-solid fa-wand-magic-sparkles" style="color:#2f00d8;"></i>
-                                    Serviços
+                              <a href="./assets/html/menu.html" aria-label="Serviços Oferecidos">
+                                    <i class="fa-solid fa-images" style="color:#2f00d8;"></i>
+                                    Book de Eventos
                               </a>
                         </li>
                         <li>
@@ -48,5 +58,8 @@
                   <small>&copy; 2025 - Rapôso Web Dev | Todos os direitos reservados.</small>
            </footer>
       </main>
+
+      <script src="./assets/js/script.js"></script>
+
 </body>
 </html>

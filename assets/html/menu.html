@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="author" content="Rodolpho Rapôso">
+      <meta name="description" content="Álbum de fotos e vídeos de atuações do DJ Tiés.">
+      <title>DJ Tiés | Serviços</title>
+      <link rel="stylesheet" href="../css/style.css">
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+      <link rel="icon" href=".assets/icon/dj.png" type="image/x-icon">
+</head>
+<body>
+      <!-- Áudio -->
+       <audio id="background-audio" loop autoplay muted>
+            <source src="../audio/bachata.mp3" type="audio/mpeg">
+            Seu navegador não suporta o elemento de áudio.
+      </audio>
+
+      <div id="audio-control" onclick="toggleAudio()">
+            <i class="fas fa-volume-mute"></i>
+      </div>
+
+      <main id="container" class="feed-container">
+            
+           <header id="feed-header">
+                  <a href="../../index.html" class="back-link" aria-label="Voltar para o card principal">
+                        <i class="fas fa-arrow-left" style="color: #8A2BE2;"></i>
+                  </a>
+                  <h1>Performances | DJ TIÉS</h1>
+           </header> 
+
+           <section id="performance-feed">
+                
+                <div class="post-card">
+                      <div class="media-placeholder">
+                            <i class="fas fa-compact-disc"></i>
+                            <p>Vídeo/Foto da Performance #1</p>
+                      </div>
+                      <div class="post-actions">
+                            <button class="action-btn like-btn" aria-label="Curtir">
+                                  <i class="far fa-thumbs-up"></i>
+                            </button>
+                            <button class="action-btn favorite-btn" aria-label="Favoritar">
+                                  <i class="far fa-heart"></i>
+                            </button>
+                            <button class="action-btn comment-btn" aria-label="Comentar">
+                                  <i class="far fa-comment"></i>
+                            </button>
+                            <span class="placeholder-text">Conteúdo em breve...</span>
+                      </div>
+                </div>
+
+                <div class="post-card">
+                      <div class="media-placeholder">
+                            <i class="fas fa-camera"></i>
+                            <p>Vídeo/Foto da Performance #2</p>
+                      </div>
+                      <div class="post-actions">
+                            <button class="action-btn like-btn" aria-label="Curtir">
+                                  <i class="far fa-thumbs-up"></i>
+                            </button>
+                            <button class="action-btn favorite-btn" aria-label="Favoritar">
+                                  <i class="far fa-heart"></i>
+                            </button>
+                            <button class="action-btn comment-btn" aria-label="Comentar">
+                                  <i class="far fa-comment"></i>
+                            </button>
+                            <span class="placeholder-text">Role para mais...</span>
+                      </div>
+                </div>
+                
+                </section>
+            
+           <footer>
+                  <small>&copy; 2025 - Rapôso Web Dev | Todos os direitos reservados.</small>
+           </footer>
+      </main>
+
+      <script src="../js/script.js"></script>
+
+</body>
+</html>

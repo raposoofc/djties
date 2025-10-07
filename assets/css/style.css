@@ -127,31 +127,31 @@ nav .menu li {
 nav .menu a {
       color: #FFFFFF;
       text-decoration: none;
-      font-weight: 600;
+      font-weight: 700;
       display: flex;
       align-items: center;
       justify-content: center;
       gap: 8px;
       padding: 14px;
-      background: rgba(138, 43, 226, 0.3);
+      background: rgba(59, 18, 97, 0.3);
       border-radius: 10px;
       transition: all 0.3s ease;
       width: 100%;
       border: 1px solid #8A2BE2;
-      text-shadow: 0 0 3px #FFFFFF;
+      text-shadow: 0 0 30px #FFFFFF;
 }
 
 nav .menu a:hover {
-      background: #8A2BE2;
-      color: #000000;
+      background: rgba(138, 43, 226, 0.3);
+      color: #FFFFFF;
       border-color: #FFFFFF;
       transform: scale(1.02);
       box-shadow: 0 0 15px #8A2BE2;
 }
 
 nav .menu a i {
-      font-size: 1.3em;
-      filter: drop-shadow(0 0 3px #FFFFFF);
+      font-size: 1.5em;
+      filter: drop-shadow(0 0 30px #FFFFFF);
 }
 
 /* Footer */
@@ -177,4 +177,205 @@ footer {
       #profile h1 {
             font-size: 1.5rem;
       }
+}
+
+
+/* ----------------------------------------------------------------
+   PÁGINA DE SERVIÇOS (menu.html)
+   ---------------------------------------------------------------- */
+
+/* Ajuste para o Container na página de feed - Maior e mais alto */
+#container.feed-container {
+      width: 95%; /* Ocupa mais largura na tela */
+      max-width: 600px; /* Limite para não ficar muito largo */
+      min-height: 90vh; /* Permite rolar se o conteúdo for maior */
+      /* Removendo a centralização forçada do conteúdo principal para permitir o feed fluir */
+      justify-content: flex-start;
+      padding-bottom: 50px; /* Espaço para o rodapé */
+}
+
+/* Header do Feed (Título e Botão Voltar) */
+#feed-header {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 10px 0;
+      margin-bottom: 20px;
+      position: relative;
+      width: 100%;
+}
+
+#feed-header h1 {
+      font-size: 1.5rem;
+      font-weight: bold;
+      color: #90EE90; /* Verde néon claro */
+}
+
+/* Botão Voltar */
+.back-link {
+      position: absolute;
+      left: 0;
+      top: 50%;
+      transform: translateY(-50%);
+      font-size: 1.5rem;
+      text-decoration: none;
+      padding: 5px;
+      transition: color 0.3s ease;
+}
+
+.back-link:hover i {
+      color: #FFFFFF !important;
+      text-shadow: 0 0 5px #FFFFFF;
+}
+
+/* Feed de Performances (Content Area) */
+#performance-feed {
+      display: flex;
+      flex-direction: column;
+      gap: 25px; /* Espaçamento entre os cards */
+      width: 100%;
+}
+
+/* Post Card (Item do Feed) */
+.post-card {
+      background: rgba(138, 43, 226, 0.1); /* Fundo sutil violeta */
+      border: 1px solid #8A2BE2; /* Borda néon violeta */
+      border-radius: 12px;
+      padding: 15px;
+      box-shadow: 0 4px 15px rgba(138, 43, 226, 0.4);
+      overflow: hidden;
+}
+
+.media-placeholder {
+      width: 100%;
+      height: 250px; /* Altura fixa para placeholder */
+      background: rgba(0, 0, 0, 0.8);
+      border: 2px dashed #90EE90;
+      border-radius: 8px;
+      margin-bottom: 15px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      color: #90EE90;
+      font-size: 1.2rem;
+      text-align: center;
+}
+
+.media-placeholder i {
+      font-size: 3rem;
+      margin-bottom: 10px;
+      text-shadow: 0 0 5px #90EE90;
+}
+
+/* Ações (Curtir, Favoritar, Comentar) */
+.post-actions {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+      padding: 5px 0;
+}
+
+.action-btn {
+      background: transparent;
+      border: none;
+      color: #FFFFFF;
+      cursor: pointer;
+      font-size: 1.4rem;
+      padding: 5px;
+      transition: color 0.2s ease, transform 0.2s ease;
+}
+
+.action-btn:hover {
+      transform: scale(1.1);
+}
+
+.like-btn i {
+      color: #90EE90; /* Verde para Curti */
+}
+
+.favorite-btn i {
+      color: #FF69B4; /* Rosa para Favorito (Coração) */
+}
+
+.comment-btn i {
+      color: #8A2BE2; /* Violeta para Comentário */
+}
+
+.action-btn:focus {
+      outline: none;
+}
+
+/* Para o feedback visual de clique (temporário, a lógica virá depois) */
+.action-btn:active {
+      transform: scale(0.9);
+}
+
+.placeholder-text {
+    margin-left: auto; /* Empurra o texto para a direita */
+    color: #F2F4F6;
+    font-size: 0.8rem;
+    opacity: 0.6;
+}
+
+/* Ajuste de responsividade para o feed */
+@media (max-width: 420px) {
+    #container.feed-container {
+        padding: 15px;
+        width: 100%;
+    }
+    
+    #feed-header h1 {
+        font-size: 1.3rem;
+    }
+    
+    .back-link {
+        font-size: 1.3rem;
+    }
+    
+    .media-placeholder {
+        height: 200px;
+    }
+
+    .action-btn {
+        font-size: 1.2rem;
+    }
+}
+
+
+/* ----------------------------------------------------------------
+   CONTROLE DE ÁUDIO DE FUNDO
+   ---------------------------------------------------------------- */
+#audio-control {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 9999; /* Garante que fique acima de tudo */
+    cursor: pointer;
+    background: #8A2BE2; /* Violeta sólido ao passar o mouse */
+    color: #FFFFFF;
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.2rem;
+    box-shadow: 0 0 10px rgba(138, 43, 226, 0.8);
+    transition: opacity 0.3s ease, background 0.3s ease;
+    opacity: 0.5; /* Começa sutilmente */
+}
+
+#audio-control:hover {
+    background: rgba(138, 43, 226, 0.5); /* Violeta semi-transparente */
+    opacity: 1;
+}
+
+@media (max-width: 420px) {
+    #audio-control {
+        bottom: 10px;
+        right: 10px;
+        width: 40px;
+        height: 40px;
+    }
 }
