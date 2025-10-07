@@ -35,6 +35,7 @@ Acesse o card virtual do DJ Tiés aqui: Visite e contrate este excelente profiss
   <img src="https://skillicons.dev/icons?i=git" height="40" alt="git logo" />&nbsp;
   <img src="https://skillicons.dev/icons?i=github" height="40" alt="github logo" />&nbsp;
   <img src="https://skillicons.dev/icons?i=vscode" height="40" alt="Visual Studio Code logo" />&nbsp;
+  <img src="https://skillicons.dev/icons?i=vercel" height="40" alt="Vercel logo" />&nbsp;
 </p>
 
 ---
@@ -42,6 +43,12 @@ Acesse o card virtual do DJ Tiés aqui: Visite e contrate este excelente profiss
 ## 🌟 Recursos e Funcionalidades
 
 - **Responsividade:** Interface otimizada para ser utilizada em qualquer dispositivo (desktops, tablets e smartphones).
+
+- **Álbum de Performances (Feed Social):** Nova página de serviços com layout de feed de rede social para exibir fotos e vídeos de atuações, incluindo cards com botões de Curtir, Favoritar e Comentário (lógica futura).
+
+- **Efeito Visual Neon Pulsante:** Efeito CSS no título principal (`h1`) que simula uma luz néon piscando, reforçando o tema de festa e discoteca.
+
+- **Trilha Sonora de Fundo:** Áudio implementado com *autoplay* (silenciado por padrão, conforme restrições de navegadores) e controle manual de *mute/unmute* em ambas as páginas, para criar uma experiência imersiva.
 
 - **Links Interativos:** Botões de acesso rápido para redes sociais, WhatsApp e links de contratação do DJ.
 
@@ -52,8 +59,6 @@ Acesse o card virtual do DJ Tiés aqui: Visite e contrate este excelente profiss
 - **Interatividade:** Navegação fluida e interação direta com as plataformas do DJ Tiés.
 
 ---
-
-## 🔥 GitHub Streak
 
 ### 📊 Estatísticas do GitHub
 
